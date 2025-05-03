@@ -6,6 +6,7 @@ function Home() {
     <div
       style={{
         minHeight: '100vh',
+        position: 'relative',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -18,6 +19,35 @@ function Home() {
         textShadow: '1px 1px 4px #000',
       }}
     >
+      {/* Top-right Login & Sign Up buttons */}
+      <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
+        <Link
+          to="/login"
+          style={{
+            marginRight: '10px',
+            padding: '8px 16px',
+            backgroundColor: '#007bff',
+            color: 'white',
+            borderRadius: '4px',
+            textDecoration: 'none',
+          }}
+        >
+           Login
+        </Link>
+        <Link
+          to="/signup"
+          style={{
+            padding: '8px 16px',
+            backgroundColor: '#007bff',
+            color: 'white',
+            borderRadius: '4px',
+            textDecoration: 'none',
+          }}
+        >
+           SignUp
+        </Link>
+      </div>
+
       <div style={{ textAlign: 'center', maxWidth: '700px' }}>
         <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>
           🌍 Welcome to the Countries App

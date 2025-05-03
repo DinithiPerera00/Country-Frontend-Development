@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import CountryList from '../components/CountryList';
 
 function AllCountriesPage() {
@@ -43,8 +44,10 @@ function AllCountriesPage() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>All Countries </h2>
+    <div style={{ padding: '20px', position: 'relative' }}>
+     
+
+      <h2>All Countries</h2>
 
       {/* Search */}
       <input
