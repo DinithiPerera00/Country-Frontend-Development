@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 function Home() {
+  
   return (
     <div
       style={{
@@ -19,6 +21,8 @@ function Home() {
         textShadow: '1px 1px 4px #000',
       }}
     >
+
+       
       {/* Top-right Login & Sign Up buttons */}
       <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
         <Link

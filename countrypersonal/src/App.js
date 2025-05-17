@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import CountryAlphaPage from './pages/CountryAlphaPage';
-
+import ProfilePage from './pages/ProfilePage';
 import './App.css';
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
           <Route path="/region/:regionName" element={<RegionPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/alpha/:code" element={<CountryAlphaPage />} />
           
 

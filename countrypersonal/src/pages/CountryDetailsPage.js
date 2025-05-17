@@ -8,6 +8,7 @@ function CountryDetailsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isFavourite, setIsFavourite] = useState(false);
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     const fetchCountryDetails = async () => {
@@ -46,7 +47,7 @@ function CountryDetailsPage() {
     fetchCountryDetails();
   }, [code]);
 
-  const handleFavouriteClick = () => {
+  const handleFavouriteClick = async () => {
     const favs = JSON.parse(localStorage.getItem('favouriteCountries') || '[]');
     let updatedFavs;
     if (favs.includes(country.cca3)) {
@@ -56,7 +57,29 @@ function CountryDetailsPage() {
       updatedFavs = [...favs, country.cca3];
       setIsFavourite(true);
     }
+
+    // Update favourites in localStorage
     localStorage.setItem('favouriteCountries', JSON.stringify(updatedFavs));
+
+    // Update favourites on the server for the logged-in user
+    if (token) {
+      try {
+        const response = await fetch('http://localhost:5000/profile/favourites', {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ favourites: updatedFavs }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to update favourites on the server');
+        }
+      } catch (err) {
+        console.error('Error updating favourites:', err);
+      }
+    }
   };
 
   if (loading) {

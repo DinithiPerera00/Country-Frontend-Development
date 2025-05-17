@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import CountryList from '../components/CountryList';
+import { FaUserCircle } from 'react-icons/fa';
 
 function AllCountriesPage() {
   const [countries, setCountries] = useState([]);
@@ -8,6 +9,7 @@ function AllCountriesPage() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
+  const token = localStorage.getItem('token');
 
   const regions = ['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
@@ -45,7 +47,24 @@ function AllCountriesPage() {
 
   return (
     <div style={{ padding: '20px', position: 'relative' }}>
-     
+      {token && (
+      <Link
+        to="/profile"
+        style={{
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          fontSize: '1.8rem',
+          color: '#000000',
+          textDecoration: 'none',
+        }}
+        title="Profile"
+      >
+        <FaUserCircle style={{ fontSize: '1.6rem' }}  />
+        
+      </Link>
+    )}
+
 
       <h2>All Countries</h2>
 
