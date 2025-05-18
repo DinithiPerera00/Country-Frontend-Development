@@ -48,11 +48,11 @@ const ProfilePage = () => {
     <div
       className="min-vh-100"
       style={{
-        backgroundImage: "url('/burj.jpg')",
+        backgroundColor: "lightblue",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '100vh', // Ensures the image covers the full page
+        height: '100vh', 
         paddingTop: '2rem',
         paddingBottom: '2rem',
       }}
@@ -61,9 +61,6 @@ const ProfilePage = () => {
       <div className="container bg-light p-4 rounded shadow-sm mb-5">
         <h2 className="text-center mb-4">👤 <strong>User Profile</strong></h2>
         <div className="row">
-          <div className="col-md-6">
-            <h5><strong>📛 User Name:</strong> {user.userName}</h5>
-          </div>
           <div className="col-md-6">
             <h5><strong>📧 Email:</strong> {user.email}</h5>
           </div>
