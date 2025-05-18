@@ -46,6 +46,7 @@ function AllCountriesPage() {
   };
 
   return (
+    
     <div style={{ padding: '20px', position: 'relative' }}>
       {token && (
       <Link
@@ -67,6 +68,7 @@ function AllCountriesPage() {
 
 
       <h2>All Countries</h2>
+      
 
       {/* Search */}
       <input

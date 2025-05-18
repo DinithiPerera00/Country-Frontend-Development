@@ -54,7 +54,7 @@ function Home() {
 
       <div style={{ textAlign: 'center', maxWidth: '700px' }}>
         <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>
-          🌍 Welcome to the Countries App
+          🌍 Welcome to Country Explore
         </h1>
         <p style={{ fontSize: '1.25rem', marginBottom: '30px' }}>
           Choose a region to explore:
